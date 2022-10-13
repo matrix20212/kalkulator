@@ -3,7 +3,7 @@ function dzialanie(znak){
   let b = document.getElementById('liczba2').value; // Druga liczba
   let i = document.getElementById('sys').value;  // System liczbowy
 
-  if(a == '' || b == '' || i == ''){
+  if(isNaN(parseInt(a,i)) || isNaN(parseInt(b,i)) || a == '' || b == '' || i == ''){
       document.getElementById("wynik").innerHTML = "Błąd w zapisie";
       return;
   }
@@ -38,8 +38,14 @@ function odejmowanie(a,b,i){
 }
 
 function dzielenie(a,b,i){
-  let wynik = parseInt(a,i) / parseInt(b,i);
-  let wwynik = wynik.toString(i);
+  let wynik = Math.round(parseInt(a,i) / parseInt(b,i));
+  let modulo = parseInt(a,i) % parseInt(b,i);
+  let wwynik;
+  if(modulo == 0){
+    wwynik = wynik.toString(i);
+  }else{
+    wwynik = wynik.toString(i)+" | reszta = "+modulo.toString(i);
+  }
   return wwynik;
 }
 
