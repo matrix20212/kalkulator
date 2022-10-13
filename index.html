@@ -5,8 +5,48 @@
     <title>kalkulator</title>
     <link rel="stylesheet" href="style.css">
     <script src="kalkulator.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="box">
+        <span>Kalkulator w różnych systemach liczbowych</span> <br>
+        <span>liczba 1: </span> <input type="text" name="liczba1" id="liczba1"> <br>
+        <span>liczba 2: </span> <input type="text" name="liczba2" id="liczba2"> <br>
+        <span>Sys. liczbowy: </span> <input type="number" name="sys" id="sys" style="width: 130px;" value="10"> <br>
+        <div class="buttons">
+            <button onclick="dzialanie('+')">+</button>
+            <button onclick="dzialanie('-')">-</button>
+            <button onclick="dzialanie('*')">*</button>
+            <button onclick="dzialanie('/')">/</button>
+        </div> <br><br>
+        <div class="wynik">
+            <span id="wynik"></span>
+        </div>
+    </div>
+    <script>
+        function dzialanie(znak){
+            let a = document.getElementById('liczba1').value; // Pierwsza liczba
+            let b = document.getElementById('liczba2').value; // Druga liczba
+            let i = document.getElementById('sys').value;  // System liczbowy
+
+            switch (znak) {
+                case '+':
+                    document.getElementById("wynik").innerHTML = a.toUpperCase()+"<span id='wyniksys'>("+i+")</span> + "+b.toUpperCase()+"<span id='wyniksys'>("+i+")</span> = "+dodawanie(a,b,i).toUpperCase()+"<span id='wyniksys'>("+i+")</span>";
+                    break;
+                case '-':
+                    document.getElementById("wynik").innerHTML = a.toUpperCase()+"<span id='wyniksys'>("+i+")</span> - "+b.toUpperCase()+"<span id='wyniksys'>("+i+")</span> = "+odejmowanie(a,b,i).toUpperCase()+"<span id='wyniksys'>("+i+")</span>";
+                    break;               
+                case '*':
+                    document.getElementById("wynik").innerHTML = a.toUpperCase()+"<span id='wyniksys'>("+i+")</span> * "+b.toUpperCase()+"<span id='wyniksys'>("+i+")</span> = "+mnozenie(a,b,i).toUpperCase()+"<span id='wyniksys'>("+i+")</span>";
+                    break;
+                case '/':
+                    document.getElementById("wynik").innerHTML = a.toUpperCase()+"<span id='wyniksys'>("+i+")</span> / "+b.toUpperCase()+"<span id='wyniksys'>("+i+")</span> = "+dzielenie(a,b,i).toUpperCase()+"<span id='wyniksys'>("+i+")</span>";
+                    break;  
+            }
+            
+        }
+    </script>
 </body>
 </html>

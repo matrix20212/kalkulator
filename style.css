@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(36, 36, 36);
+    font-family: 'Roboto', sans-serif;
+}
+.box{
+    width: auto;
+    height: auto;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    float: left;
+
+}
+.box input{
+    margin-top: 5px;
+    background-color: rgb(58, 58, 58);
+    color: white;
+    text-transform:uppercase;
+}
+span{
+    color: white;
+}
+.buttons{
+    float: left;
+    margin-top: 15px;
+}
+button{
+    background-color: rgb(58, 58, 58);
+    color: white;
+}
+button + button{
+    margin-left: 10px;
+}
+.wynik{
+    float: left;
+    margin-top: 15px;
+}
+#wynik{
+    font-size: 20px;
+}
+#wyniksys{
+    font-size: 10px;
+    margin-top: 5px;
+}
