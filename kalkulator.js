@@ -3,7 +3,7 @@ function dzialanie(znak){
   let b = document.getElementById('liczba2').value; // Druga liczba
   let i = document.getElementById('sys').value;  // System liczbowy
 
-  if(isNaN(a.toString(i)) || isNaN(b.toString(i)) || a == '' || b == '' || i == ''){
+  if(a == '' || b == '' || i == ''){
       document.getElementById("wynik").innerHTML = "Błąd w zapisie";
       return;
   }
